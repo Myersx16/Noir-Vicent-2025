@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Délcia ❤️</title>
+
+<!-- Fonte estilo carta -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    background: linear-gradient(120deg, #ffd1dc, #f7a1c4, #ffb7c5);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: #5a0033;
+}
+
+/* SECTIONS */
+section {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section.active {
+    display: flex;
+}
+
+/* BOTÃO */
+.next-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    padding: 10px 22px;
+    background: #e6005c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(230,0,92,0.6);
+}
+
+/* TELA 1 — CARTA FECHADA */
+.envelope {
+    width: 260px;
+    height: 180px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seal {
+    width: 60px;
+    height: 60px;
+    background: #e6005c;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* TELA 2 */
+.title {
+    text-align: center;
+    font-size: 42px;
+}
+
+/* TELA 3 */
+.photo-one img {
+    max-height: 70vh;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.text {
+    max-width: 420px;
+    font-size: 26px;
+    margin-left: 30px;
+}
+
+/* TELA 4 — CARTA */
+.letter {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 700px;
+    font-size: 26px;
+    line-height: 1.6;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* TELA 5 */
+.final {
+    display: flex;
+    gap: 20px;
+}
+
+.final img {
+    height: 65vh;
+    border-radius: 20px;
+}
+
+.final-text {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TELA 1 -->
+<section class="active" id="s1">
+    <div class="envelope" onclick="next()">
+        <div class="seal">❤️</div>
+    </div>
+</section>
+
+<!-- TELA 2 -->
+<section id="s2">
+    <div class="title">
+        Feliz Dia dos Namorados ❤️<br>
+        4 meses de nós
+    </div>
+    <button class="next-btn" onclick="next()">Clique aqui</button>
+</section>
+
+<!-- TELA 3 -->
+<section id="s3">
+    <div style="display:flex; align-items:center;">
+        <div class="photo-one">
+            <img src="nossa.png">
+        </div>
+        <div class="text">
+            Você é especial para mim de um jeito difícil de explicar.<br>
+            Em ti eu encontro carinho, paz e um amor<br>
+            que cresce a cada dia.
+        </div>
+    </div>
+    <button class="next-btn" onclick="next()">Seguinte</button>
+</section>
+
+<!-- TELA 4 -->
+<section id="s4">
+    <div class="letter">
+        <!-- ESCREVE A TUA CARTA AQUI -->
+        Meu amor,<br><br>
+
+        (Escreve aqui tudo o que sentes por ela.
+        Não tenhas pressa. Essa é a parte mais importante.)<br><br>
+
+        Com todo o meu amor ❤️
+    </div>
+    <button class="next-btn" onclick="next()">Seguinte</button>
+</section>
+
+<!-- TELA 5 -->
+<section id="s5">
+    <div class="final">
+        <img src="delcia1.jpg">
+        <img src="delcia2.jpg">
+        <img src="delcia3.jpg">
+    </div>
+
+    <div class="final-text">
+        Obrigado por fazeres parte da minha vida,<br>
+        te amo minha princesa ❤️
+    </div>
+</section>
+
+<script>
+let current = 1;
+function next() {
+    document.getElementById("s" + current).classList.remove("active");
+    current++;
+    document.getElementById("s" + current).classList.add("active");
+}
+</script>
+
+</body>
+</html>
